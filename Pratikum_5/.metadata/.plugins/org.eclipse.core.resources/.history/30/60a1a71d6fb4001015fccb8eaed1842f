@@ -1,0 +1,39 @@
+package pratikum5;
+
+//abstract class Kendaraan 
+public abstract class Kendaraan {
+ // Properti [cite: 147, 152-154]
+ private String merk;
+ private String model;
+ private int tahunProduksi;
+
+ // Konstruktor [cite: 155]
+ public Kendaraan(String merk, String model, int tahunProduksi) {
+     this.merk = merk; // Perbaikan dari [cite: 156]
+     this.model = model; [cite: 157]
+     this.tahunProduksi = tahunProduksi; // Perbaikan dari [cite: 158, 160]
+ }
+
+ // Abstract method [cite: 148, 161]
+ public abstract void nyalakanMesin();
+
+ // Final method [cite: 149, 162]
+ public final void tampilkanInfo() {
+     System.out.println("Merk: " + merk); [cite: 163]
+     System.out.println("Model: " + model); [cite: 164-165]
+     System.out.println("Tahun Produksi: " + tahunProduksi); [cite: 166]
+ }
+
+ // Getter untuk properti (dibutuhkan oleh MainApp)
+ public String getMerk() {
+     return merk;
+ }
+
+ public String getModel() {
+     return model;
+ }
+
+ public int getTahunProduksi() {
+     return tahunProduksi;
+ }
+}
