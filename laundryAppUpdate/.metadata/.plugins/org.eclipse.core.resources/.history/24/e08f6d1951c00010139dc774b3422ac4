@@ -1,0 +1,5 @@
+package laundryapp.config;
+
+public class Database {
+
+}

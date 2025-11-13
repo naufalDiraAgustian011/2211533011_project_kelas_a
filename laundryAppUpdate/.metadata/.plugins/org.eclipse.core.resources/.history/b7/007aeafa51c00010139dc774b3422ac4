@@ -1,0 +1,5 @@
+package laundryapp.model;
+
+public class CustomerBuilder {
+
+}

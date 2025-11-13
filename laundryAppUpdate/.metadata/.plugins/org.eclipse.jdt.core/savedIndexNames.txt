@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+D:\Pratikum PBO\laundryApp - Copy\.metadata\.plugins\org.eclipse.jdt.core
+2137902382.index
+1865797976.index
+2528550770.index
+4010996681.index

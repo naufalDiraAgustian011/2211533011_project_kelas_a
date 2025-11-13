@@ -1,0 +1,57 @@
+package laundryapp.table;
+
+import java.util.List;
+import javax.swing.table.AbstractTableModel;
+import laundryapp.model.Customer;
+
+/**
+ * Class Model untuk JTable
+ * * Class ini bertugas sebagai "jembatan" antara data (List<Customer>)
+ * dengan komponen GUI (JTable).
+ * JTable akan bertanya pada class ini:
+ * - Ada berapa baris? (getRowCount)
+ * - Ada berapa kolom? (getColumnCount)
+ * - Apa nama kolomnya? (getColumnName)
+ * - Data di baris X, kolom Y itu apa? (getValueAt)
+ */
+public class TableCustomer extends AbstractTableModel {
+
+    private List<Customer> listCustomer;
+    private final String[] columnNames = {"ID", "Nama", "Email", "Alamat", "HP"};
+
+    public TableCustomer(List<Customer> listCustomer) {
+        this.listCustomer = listCustomer;
+    }
+
+    @Override
+    public int getRowCount() {
+        // Jumlah baris = jumlah data di list
+        return listCustomer.size();
+    }
+
+    @Override
+    public int getColumnCount() {
+        // Jumlah kolom = jumlah nama kolom
+        return columnNames.length;
+    }
+
+    @Override
+    public String getColumnName(int column) {
+        // Mengembalikan nama kolom berdasarkan indeks
+        return columnNames[column];
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        // Mengembalikan data spesifik di sel (baris, kolom)
+        Customer cs = listCustomer.get(rowIndex);
+        switch (columnIndex) {
+            case 0: return cs.getId();
+            case 1: return cs.getNama();
+            case 2: return cs.getEmail();
+            case 3: return cs.getAlamat();
+            case 4: return cs.getHp();
+            default: return null;
+        }
+    }
+}
