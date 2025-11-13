@@ -1,23 +1,17 @@
 package laundryapp;
 
-// UBAH IMPORT: Sekarang kita import MainFrame, bukan LaundryForm
-import laundryapp.ui.MainFrame; 
+// UBAH IMPORT: Import LoginFrame
+import laundryapp.ui.LoginFrame;
 import javax.swing.SwingUtilities;
 
-/**
- * Class utama untuk menjalankan aplikasi.
- * Diperbarui untuk Praktikum 7.
- */
 public class Main {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                // PERUBAHAN DISINI:
-                // Menjalankan MainFrame (Menu Utama)
-                // Pengguna nanti bisa memilih menu 'Transaksi' atau 'Pelanggan' dari sini.
-                new MainFrame().setVisible(true);
+                // PERUBAHAN: Menjalankan LoginFrame (Form Login)
+                new LoginFrame().setVisible(true);
             }
         });
     }

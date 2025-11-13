@@ -1,0 +1,5 @@
+package laundryapp.dao;
+
+public class UserDao {
+
+}
