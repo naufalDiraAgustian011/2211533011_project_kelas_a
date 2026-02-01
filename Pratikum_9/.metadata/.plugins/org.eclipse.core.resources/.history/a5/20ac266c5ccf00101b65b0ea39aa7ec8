@@ -1,0 +1,52 @@
+package Pratikum9;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class DownloadManagerApp extends JFrame {
+    private JProgressBar bar1, bar2, bar3;
+    private JButton btnStart;
+
+    public DownloadManagerApp() {
+        setTitle("Download Manager App");
+        setSize(400, 250);
+        setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        // Setup Komponen (Label & ProgressBar)
+        setupUI();
+
+        btnStart.addActionListener(e -> startDownload());
+    }
+
+    private void setupUI() {
+        // ... (Kode inisialisasi Label dan ProgressBar File 1, 2, 3) ...
+        // ... (Kode tombol Downloading) ...
+        // (Kode lengkap terdapat di project Eclipse)
+    }
+
+    private void startDownload() {
+        btnStart.setEnabled(false);
+        
+        // Menjalankan 3 Thread berbeda dengan kecepatan berbeda
+        new Thread(() -> runTask(bar1, 50)).start(); // Cepat
+        new Thread(() -> runTask(bar2, 100)).start(); // Lambat
+        new Thread(() -> runTask(bar3, 30)).start(); // Sangat Cepat
+    }
+
+    private void runTask(JProgressBar bar, int speed) {
+        try {
+            for (int i = 0; i <= 100; i++) {
+                bar.setValue(i);
+                Thread.sleep(speed); // Delay sesuai parameter speed
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new DownloadManagerApp().setVisible(true));
+    }
+}

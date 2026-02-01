@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\Pratikum PBO\Pratikum_9\.metadata\.plugins\org.eclipse.jdt.core
+3298722762.index
+4010996681.index
+1865797976.index
